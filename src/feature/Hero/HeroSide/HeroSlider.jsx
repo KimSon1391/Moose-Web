@@ -19,7 +19,7 @@ function HeroSlider(props) {
         const response = await movieApi.getMovies(movieType.popular, {
           params,
         });
-        setMovies(response.results.slice(0, 4));
+        setMovies(response.results.slice(17, 20));
       } catch (error) {
         console.log('Faild to fetch movies:', error);
       }

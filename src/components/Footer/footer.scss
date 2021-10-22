@@ -42,9 +42,15 @@
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             // margin: 30px 0 50px 0;
+            @include xxs {
+                grid-template-columns: repeat(2, 1fr);
+            }
             a {
                 color: #aaa;
                 font-size: 14px;
+                @include xxs {
+                    font-size: 12px;
+                }
                 @media (hover: hover) and (pointer: fine) {
                     &:hover {
                         color: $primary-cl;
