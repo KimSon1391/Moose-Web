@@ -1,0 +1,58 @@
+/*primary colors*/
+$primary-cl: #f78c1f;
+$second-cl: #181b1f;
+
+$body-cl: #000;
+$line-cl: #74747fa0;
+
+$white-cl: #fff;
+$black-cl: #000;
+
+/*global text color*/
+$text-cl: #fff;
+$text-black-cl: #000;
+
+//box shadow
+$box-shadow: 0px 0px 27px 0px $primary-cl;
+$text-neon: 0 0 4px $primary-cl, 0 0 11px $primary-cl, 0 0 19px $primary-cl, 0 0 40px $primary-cl, 0 0 80px $primary-cl,
+    0 0 90px $primary-cl, 0 0 100px $primary-cl, 0 0 150px $primary-cl;
+$border-radius: 20px;
+
+// timing transition
+$t: 0.4s;
+$cubic: cubic-bezier(0.84, 0.13, 0.33, 0.97);
+
+/*font families*/
+$font-stack: "Open Sans", sans-serif;
+$font-main: "Netflix Sans";
+
+/*headings typo*/
+$fz-text: 16px;
+$lh-text: normal;
+
+$fz-text-m: 16px;
+$lh-text-m: normal;
+
+//
+$height-header: 69px;
+
+//============================================================//
+
+/*BOXED LAYOUT*/
+$container-max-width: 1920px;
+$container-width: 1200px;
+$container-fluid-padding: 50px;
+$container-mb-padding: 15px;
+
+/*GRID - media queries breakpoints*/
+$xxs-min: 576px;
+$xs-min: 768px;
+$sm-min: 992px;
+$md-min: 1200px;
+$lg-min: 1600px;
+
+$xxs-max: ($xxs-min - 1); // Small Mobile
+$xs-max: ($xs-min - 1); // Mobile
+$sm-max: ($sm-min - 1); // Table
+$md-max: ($md-min - 1); // Desktop
+$lg-max: ($lg-min - 1); // Large Desktop

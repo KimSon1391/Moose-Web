@@ -1,0 +1,63 @@
+@import "../../index.scss";
+
+.footer {
+    margin-top: 100px;
+    &__content {
+        padding: 30px 0;
+        border-top: 1px solid $line-cl;
+
+        .logo {
+            display: flex;
+            align-items: center;
+            margin-bottom: 60px;
+            @include textNeon;
+            color: $white-cl;
+            font-size: 40px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        &__social {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 60px;
+            a {
+                font-size: 30px;
+                color: #aaa;
+                cursor: pointer;
+                @media (hover: hover) and (pointer: fine) {
+                    &:hover {
+                        color: $primary-cl;
+                    }
+                }
+            }
+
+            & > * ~ * {
+                margin-left: 20px;
+            }
+        }
+
+        &__wrap {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            // margin: 30px 0 50px 0;
+            a {
+                color: #aaa;
+                font-size: 14px;
+                @media (hover: hover) and (pointer: fine) {
+                    &:hover {
+                        color: $primary-cl;
+                    }
+                }
+            }
+        }
+
+        &__list {
+            @include flexbox(flex-start, flex-start, column);
+            a {
+                margin-bottom: 20px;
+            }
+        }
+    }
+}

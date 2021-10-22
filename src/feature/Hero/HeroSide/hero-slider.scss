@@ -1,0 +1,6 @@
+@import "../../../index.scss";
+
+.hero__slider {
+    @include size(100%);
+    margin-bottom: 40px;
+}

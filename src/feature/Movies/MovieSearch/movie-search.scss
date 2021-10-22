@@ -1,0 +1,38 @@
+@import "../../../index.scss";
+
+.movie__search {
+    margin-bottom: 50px;
+    text-align: right;
+    @include size(100%);
+    position: relative;
+
+    .input__search {
+        @include br(25px);
+        outline: none;
+        @include transition($t);
+        &:focus {
+            border-color: $primary-cl;
+            box-shadow: $box-shadow;
+            @include transition($t);
+
+            &::placeholder {
+                color: $primary-cl;
+            }
+            & ~ .btn__search {
+                color: $primary-cl;
+            }
+        }
+    }
+
+    .btn__search {
+        @include size(50px);
+        @include abCenter(top);
+        right: 0;
+        padding: 0;
+        font-size: 20px;
+        color: $line-cl;
+        @include transition($t);
+
+        background-color: transparent;
+    }
+}

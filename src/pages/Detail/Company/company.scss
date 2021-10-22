@@ -1,0 +1,21 @@
+@import "../../../index.scss";
+
+.company {
+    width: 60%;
+
+    h4 {
+        margin-bottom: 30px !important;
+    }
+
+    &__wrap {
+        display: flex;
+        align-items: center;
+        li {
+            margin-right: 40px;
+            font-size: 15px;
+            &:hover {
+                color: $primary-cl;
+            }
+        }
+    }
+}

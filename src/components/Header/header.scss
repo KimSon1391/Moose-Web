@@ -1,0 +1,109 @@
+@import "../../index.scss";
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    height: $height-header;
+    @include transition(0.5s);
+
+    &.active {
+        background-color: $black-cl;
+        @include transition(0.5s);
+
+        & > .header__wrap {
+            border-bottom: none;
+        }
+    }
+
+    .logo {
+        font-size: 35px;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        justify-content: unset;
+        a {
+            @include textNeon;
+        }
+        img {
+            width: 50px;
+            margin-right: 20px;
+        }
+
+        @include xs {
+            font-size: 1.3rem;
+            img {
+                width: 40px;
+            }
+        }
+    }
+
+    &__wrap {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 100%;
+        // border-bottom: 1px solid $line-cl;
+        a {
+            color: $text-cl;
+            text-transform: uppercase;
+        }
+    }
+
+    &__nav {
+        display: flex;
+        align-items: center;
+        height: 100%;
+        margin-left: 40px;
+        li {
+            margin-left: 1rem;
+            @include size(100%);
+            @include transition($t);
+            position: relative;
+
+            &::after {
+                content: "";
+                bottom: 0;
+                @include abCenter(left);
+                width: 70%;
+                height: 1px;
+                background-color: $primary-cl;
+                @include transform(translateX(-50%) scaleX(0));
+                transform-origin: left;
+                transition: $t;
+            }
+
+            &.active,
+            &:hover {
+                a {
+                    color: $primary-cl;
+                    transition: $t;
+                }
+                &::after {
+                    @include transform(translateX(-50%) scaleX(1));
+                    transition: $t;
+                }
+            }
+        }
+
+        a {
+            display: inline-block;
+            @include size(100px, 100%);
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-weight: 700;
+            font-size: 12px;
+            letter-spacing: 2px;
+            transition: $t;
+        }
+
+        @include xs {
+            display: none;
+        }
+    }
+}

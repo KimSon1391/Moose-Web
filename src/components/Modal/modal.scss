@@ -1,0 +1,57 @@
+@import "../../index.scss";
+
+.modal {
+    @include mid(true);
+    @include fullScreen(true);
+    z-index: 999;
+    overflow: auto;
+    @include overlay(0.4);
+    @include visible(0);
+
+    &.active {
+        @include visible(1);
+    }
+
+    &__content {
+        background-color: $body-cl;
+        padding: 30px;
+        border-radius: 50px;
+        @include size(60%, 500px);
+        opacity: 0;
+        transform: translateY(-250px);
+        transition: transform 0.6s ease, opacity 0.6s ease;
+        position: relative;
+
+        & > iframe {
+            border-radius: 50px;
+        }
+
+        &__close {
+            @include abCenter(left);
+            top: -20px;
+            font-size: 40px;
+            color: $black-cl;
+            cursor: pointer;
+
+            span {
+                @include mid(true);
+                background: $white-cl;
+                @include br(50%);
+            }
+
+            &:hover {
+                color: $primary-cl;
+            }
+        }
+    }
+
+    &.active &__content {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+body.no-scroll {
+    overflow: hidden;
+    position: fixed;
+}

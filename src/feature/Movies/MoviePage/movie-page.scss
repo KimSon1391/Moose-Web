@@ -1,0 +1,12 @@
+@import "../../../index.scss";
+
+.movie__page {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 30px;
+
+    .load-more {
+        color: $line-cl;
+        text-align: center;
+    }
+}

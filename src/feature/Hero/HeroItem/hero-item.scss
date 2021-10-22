@@ -1,0 +1,122 @@
+@import "../../../index.scss";
+
+.hero__slider__item {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    @include size(100vw, 100vh);
+    @include bgImage;
+    padding: 6rem 0;
+    position: relative;
+
+    // &::before {
+    //     content: "";
+    //     position: absolute;
+    //     top: 0;
+    //     left: 0;
+    //     width: 100%;
+    //     height: 100px;
+    //     background-image: linear-gradient(to bottom, $body-cl, rgba($black-cl, 0));
+    // }
+
+    &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100px;
+        background-image: linear-gradient(to top, $body-cl, rgba($black-cl, 0));
+    }
+
+    &__content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        z-index: 2;
+        cursor: default;
+    }
+
+    &__info {
+        max-width: 50%;
+        flex: 1;
+        margin-left: 50px;
+
+        & > * ~ * {
+            margin-top: 30px;
+        }
+
+        .title {
+            font-size: 50px;
+            line-height: 1;
+            font-weight: 700;
+            span {
+                font-size: 20px;
+                font-weight: 200;
+                margin-left: 20px;
+            }
+        }
+
+        .overview {
+            font-size: 15px;
+            // @include overtext(3);
+        }
+
+        .action {
+            .btn {
+                font-weight: bold;
+                font-size: 18px;
+                letter-spacing: 2px;
+            }
+        }
+
+        .title,
+        .overview,
+        .action {
+            @include visible(0);
+            @include transform(translateY(-100%));
+            transition: 0.6s;
+        }
+    }
+
+    &__poster {
+        img {
+            max-width: 300px;
+            border-radius: $border-radius;
+            box-shadow: 0px 0px 27px 0px #000000;
+
+            @include transform(scale(0));
+            transition: 0.8s;
+        }
+    }
+
+    &.active > &__content > &__poster {
+        img {
+            @include transform(scale(1));
+            transition: 0.8s;
+        }
+    }
+
+    &.active > &__content > &__info {
+        .title,
+        .overview,
+        .action {
+            @include visible(1);
+            @include transform(translateY(0));
+            transition: 0.6s;
+        }
+
+        .title {
+            @include transition-delay(0.6s);
+        }
+
+        .overview {
+            @include transition-delay(1s);
+        }
+
+        .action {
+            @include transition-delay(1.4s);
+        }
+    }
+}

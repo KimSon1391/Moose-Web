@@ -1,0 +1,33 @@
+@import "../../../index.scss";
+.cast {
+    &__wrap {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    &__item {
+        width: calc((100% / 5) - 25px);
+        &__image {
+            position: relative;
+            min-height: 300px;
+            img {
+                @include midImg();
+            }
+        }
+
+        &__title,
+        &__character {
+            margin-top: 22px;
+            font-size: 20px;
+            text-align: center;
+        }
+
+        &__character {
+            font-size: 14px;
+            margin-top: 10px;
+            color: $primary-cl;
+        }
+    }
+}

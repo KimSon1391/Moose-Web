@@ -1,0 +1,68 @@
+@import "../../index.scss";
+
+.btn {
+    border: none;
+    border-radius: 40px;
+    background-color: $second-cl;
+    color: $white-cl;
+    padding: 25px 70px;
+    font-size: 14px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+    outline: none;
+
+    span {
+        @include mid();
+        z-index: 1;
+    }
+
+    &.active {
+        background-color: $primary-cl;
+        span {
+            color: white;
+        }
+    }
+
+    &.outline {
+        border: 2px solid white;
+        padding: 15px 70px;
+        background-color: transparent;
+        transition: $t;
+        &::after {
+            content: none;
+        }
+    }
+
+    &.load-more {
+        width: 200px;
+        margin: 0 auto;
+        display: flex;
+        margin-top: 60px;
+    }
+
+    &::after {
+        content: "";
+        @include fullScreen();
+        background: $primary-cl;
+        @include transform(scaleX(0));
+        transform-origin: left;
+        transition: $t;
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+        &:hover {
+            &::after {
+                @include transform(scaleX(1));
+                transition: $t;
+            }
+        }
+        &.outline:hover {
+            color: $primary-cl;
+            border-color: $primary-cl;
+            box-shadow: $box-shadow;
+            transition: $t;
+        }
+    }
+}

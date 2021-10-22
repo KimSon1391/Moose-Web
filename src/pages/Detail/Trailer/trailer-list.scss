@@ -1,0 +1,16 @@
+@import "../../../index.scss";
+
+.detail__trailer {
+    // display: flex;
+    // align-items: center;
+    // justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    gap: 50px 30px;
+    &__title {
+        text-align: center;
+        letter-spacing: 1px;
+        font-size: 20px;
+        margin-top: 20px;
+    }
+}

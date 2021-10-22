@@ -1,0 +1,11 @@
+@import "../../../index.scss";
+
+.input__field {
+    border: 3px solid $line-cl;
+    background-color: transparent;
+    @include br(30px);
+    @include size(400px, 50px);
+    padding: 10px 20px;
+    font-size: 17px;
+    color: white;
+}
