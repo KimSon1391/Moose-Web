@@ -15,7 +15,7 @@
     &__content {
         background-color: $body-cl;
         padding: 30px;
-        border-radius: 50px;
+        border-radius: 20px;
         @include size(60%, 500px);
         opacity: 0;
         transform: translateY(-250px);
@@ -33,7 +33,7 @@
         }
 
         & > iframe {
-            border-radius: 50px;
+            border-radius: 20px;
         }
 
         &__close {

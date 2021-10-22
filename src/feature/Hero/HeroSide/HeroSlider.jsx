@@ -31,7 +31,9 @@ function HeroSlider(props) {
       <Swiper
         modules={[Autoplay, EffectFade, Navigation]}
         effect="fade"
-        autoplay={true}
+        autoplay={{
+          delay: 4000,
+        }}
         navigation={true}
         grabCursor={true}
         spaceBetween={0}
