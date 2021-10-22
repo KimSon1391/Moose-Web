@@ -32,7 +32,7 @@ function DetailPage(props) {
   return (
     <div className="detail">
       <DetailHero itemDetail={itemDetail} company={company} />
-      <div className="container">
+      <div className="container-fluid">
         <Section className="detail__page">
           <div className="section__header">
             <h4 className="title">Cast</h4>

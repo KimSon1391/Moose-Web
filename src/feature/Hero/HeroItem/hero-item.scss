@@ -9,15 +9,18 @@
     padding: 6rem 0;
     position: relative;
 
-    // &::before {
-    //     content: "";
-    //     position: absolute;
-    //     top: 0;
-    //     left: 0;
-    //     width: 100%;
-    //     height: 100px;
-    //     background-image: linear-gradient(to bottom, $body-cl, rgba($black-cl, 0));
-    // }
+    @include md {
+        height: 70vh;
+    }
+
+    @include maxH($xs-max) {
+        height: 100vh;
+    }
+
+    @include xxs {
+        height: 70vh;
+        align-items: center;
+    }
 
     &::after {
         content: "";
@@ -36,6 +39,9 @@
         position: relative;
         z-index: 2;
         cursor: default;
+        @include xxs {
+            display: block;
+        }
     }
 
     &__info {
@@ -43,24 +49,56 @@
         flex: 1;
         margin-left: 50px;
 
+        @include xs {
+            max-width: 70%;
+            .overview {
+                @include overtext(5);
+            }
+        }
+
+        @include xxs {
+            .overview {
+                font-size: 14px !important;
+            }
+        }
+
+        @include xxs {
+            max-width: 100%;
+            margin-left: 0;
+        }
+
         & > * ~ * {
             margin-top: 30px;
+            @include mobile {
+                margin-top: 20px;
+            }
         }
 
         .title {
             font-size: 50px;
             line-height: 1;
             font-weight: 700;
+
             span {
                 font-size: 20px;
                 font-weight: 200;
                 margin-left: 20px;
             }
+
+            @include xs {
+                font-size: 40px;
+            }
+            @include xxs {
+                font-size: 35px;
+            }
+            // @include maxH($xs-max) {
+            //     font-size: 40px;
+            // }
         }
 
         .overview {
             font-size: 15px;
-            // @include overtext(3);
+            text-align: justify;
         }
 
         .action {
@@ -81,6 +119,13 @@
     }
 
     &__poster {
+        @include xxs {
+            display: none;
+        }
+        @include mobile {
+            display: none;
+        }
+
         img {
             max-width: 300px;
             border-radius: $border-radius;
@@ -88,6 +133,12 @@
 
             @include transform(scale(0));
             transition: 0.8s;
+            @include xs {
+                max-width: 200px;
+            }
+            @include maxH($xs-max) {
+                max-width: 250px;
+            }
         }
     }
 

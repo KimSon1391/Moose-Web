@@ -10,6 +10,12 @@
         @include br(25px);
         outline: none;
         @include transition($t);
+        max-width: 420px;
+
+        @include xxs {
+            padding: 5px 15px;
+        }
+
         &:focus {
             border-color: $primary-cl;
             box-shadow: $box-shadow;

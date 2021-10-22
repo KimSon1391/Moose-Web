@@ -42,12 +42,14 @@ $height-header: 69px;
 $container-max-width: 1920px;
 $container-width: 1200px;
 $container-fluid-padding: 50px;
-$container-mb-padding: 15px;
+$container-mb-padding: 30px;
+
+$mobile-rotate: 737px;
 
 /*GRID - media queries breakpoints*/
 $xxs-min: 576px;
-$xs-min: 768px;
-$sm-min: 992px;
+$xs-min: 769px;
+$sm-min: 1025px;
 $md-min: 1200px;
 $lg-min: 1600px;
 

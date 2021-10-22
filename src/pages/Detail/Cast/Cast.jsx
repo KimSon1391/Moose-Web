@@ -21,31 +21,35 @@ function Cast({ movieId }) {
     })();
   }, [movieId, category]);
 
-  return (
-    <div className="cast">
-      <div className="cast__wrap">
-        {casts.map((cast, index) => (
-          <div key={index} className="cast__item">
-            <div className="cast__item__image">
-              {cast.profile_path ? (
-                <img
-                  src={apiConfig.smallImage(cast.profile_path)}
-                  alt="movie img"
-                  loading="lazy"
-                />
-              ) : (
-                <img src={PLACEHOLDER} alt="movie img" loading="lazy" />
-              )}
+  if (casts.length > 0) {
+    return (
+      <div className="cast">
+        <div className="cast__wrap">
+          {casts.map((cast, index) => (
+            <div key={index} className="cast__item">
+              <div className="cast__item__image">
+                {cast.profile_path ? (
+                  <img
+                    src={apiConfig.smallImage(cast.profile_path)}
+                    alt="movie img"
+                    loading="lazy"
+                  />
+                ) : (
+                  <img src={PLACEHOLDER} alt="movie img" loading="lazy" />
+                )}
+              </div>
+              <h4 className="cast__item__title">
+                {cast.name || cast.original_name}
+              </h4>
+              <p className="cast__item__character">{cast.character}</p>
             </div>
-            <h4 className="cast__item__title">
-              {cast.name || cast.original_name}
-            </h4>
-            <p className="cast__item__character">{cast.character}</p>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
-    </div>
-  );
+    );
+  } else {
+    return <p style={{ textAlign: 'center' }}>Updating</p>;
+  }
 }
 
 export default Cast;

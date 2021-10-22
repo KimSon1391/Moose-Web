@@ -5,15 +5,28 @@
         align-items: center;
         justify-content: space-between;
         width: 100%;
+        @include xxs {
+            display: block;
+        }
     }
 
     &__item {
         width: calc((100% / 5) - 25px);
+
+        @include xxs {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
         &__image {
             position: relative;
-            min-height: 300px;
+            min-height: 350px;
             img {
                 @include midImg();
+            }
+
+            @include xxs {
+                min-height: 300px;
             }
         }
 
@@ -22,6 +35,9 @@
             margin-top: 22px;
             font-size: 20px;
             text-align: center;
+            @include xxs {
+                margin-top: 10px;
+            }
         }
 
         &__character {

@@ -18,12 +18,16 @@
         }
     }
 
+    @include xxs {
+        height: $height-header - 10px;
+    }
+
     .logo {
         font-size: 35px;
         font-weight: bold;
         display: flex;
         align-items: center;
-        justify-content: unset;
+        // justify-content: unset;
         a {
             @include textNeon;
         }
@@ -33,9 +37,19 @@
         }
 
         @include xs {
-            font-size: 1.3rem;
+            font-size: 30px;
             img {
                 width: 40px;
+            }
+        }
+
+        @include xxs {
+            a {
+                font-size: 20px;
+            }
+            img {
+                width: 20px;
+                margin-right: 10px;
             }
         }
     }
@@ -56,7 +70,25 @@
         display: flex;
         align-items: center;
         height: 100%;
-        margin-left: 40px;
+
+        @include xxs {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            height: 60px;
+            width: 100%;
+            background-color: $body-cl;
+            @include flexbox(center, space-between);
+
+            & > * ~ * {
+                margin-left: 0;
+            }
+
+            a {
+                width: unset !important;
+            }
+        }
+
         li {
             margin-left: 1rem;
             @include size(100%);
@@ -73,6 +105,10 @@
                 @include transform(translateX(-50%) scaleX(0));
                 transform-origin: left;
                 transition: $t;
+
+                @include xxs {
+                    height: 3px;
+                }
             }
 
             &.active,
@@ -100,10 +136,6 @@
             font-size: 12px;
             letter-spacing: 2px;
             transition: $t;
-        }
-
-        @include xs {
-            display: none;
         }
     }
 }

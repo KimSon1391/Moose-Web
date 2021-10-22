@@ -4,7 +4,8 @@
     border: 3px solid $line-cl;
     background-color: transparent;
     @include br(30px);
-    @include size(400px, 50px);
+    // @include size(400px, 50px);
+    @include size(100%);
     padding: 10px 20px;
     font-size: 17px;
     color: white;

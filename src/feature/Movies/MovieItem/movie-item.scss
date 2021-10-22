@@ -9,6 +9,9 @@
         @include transform(translateY(0));
         text-shadow: none;
         @include transition(transform $t ease-out);
+        @include xxs {
+            font-size: 15px;
+        }
     }
     &__image {
         position: relative;
@@ -16,6 +19,16 @@
         border-radius: $border-radius;
         min-height: 300px;
         box-shadow: none;
+
+        @include md {
+            min-height: 420px;
+        }
+        @include xs {
+            min-height: 300px;
+        }
+        @include xxs {
+            min-height: 250px;
+        }
 
         &::after {
             content: "";

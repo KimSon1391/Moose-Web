@@ -13,6 +13,14 @@
     position: relative;
     outline: none;
 
+    @include xs {
+        padding: 25px 60px;
+    }
+    @include xxs {
+        font-size: 13px !important;
+        padding: 18px 55px;
+    }
+
     span {
         @include mid();
         z-index: 1;
@@ -32,6 +40,9 @@
         transition: $t;
         &::after {
             content: none;
+        }
+        @include xxs {
+            padding: 10px 40px;
         }
     }
 

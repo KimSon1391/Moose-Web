@@ -4,7 +4,7 @@ import './company.scss';
 function Company({ company }) {
   return (
     <div className="company">
-      <h4>Studio</h4>
+      <h4 className="title">Studio</h4>
       <ul className="company__wrap">
         {company.map((cast, index) => (
           <li key={index} className="company__name">

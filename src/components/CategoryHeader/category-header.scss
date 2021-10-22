@@ -6,10 +6,16 @@
     margin-bottom: 40px;
     @include textNeon;
     text-align: center;
+    @include xxs {
+        margin-bottom: 20px;
+    }
     .title {
         font-size: 70px;
         font-weight: bold;
         letter-spacing: 10px;
         text-transform: uppercase;
+        @include xxs {
+            font-size: 50px;
+        }
     }
 }

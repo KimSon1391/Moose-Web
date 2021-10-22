@@ -3,5 +3,13 @@
 .movie__list {
     .swiper-slide {
         width: 15%;
+
+        @include md {
+            width: 25%;
+        }
+
+        @include xxs {
+            width: 45%;
+        }
     }
 }

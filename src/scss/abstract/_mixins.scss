@@ -12,6 +12,7 @@
         @content;
     }
 }
+
 // tablet
 @mixin sm {
     @media screen and (max-width: $sm-max) {
@@ -27,6 +28,18 @@
 // small mobile
 @mixin xxs {
     @media (max-width: $xxs-max) {
+        @content;
+    }
+}
+
+@mixin maxH($args) {
+    @media (max-height: $args) {
+        @content;
+    }
+}
+
+@mixin mobile {
+    @media only screen and (max-width: $mobile-rotate) {
         @content;
     }
 }
