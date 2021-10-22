@@ -4,6 +4,12 @@
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
     gap: 50px 30px;
+    &__item {
+        @include xxs {
+            margin-bottom: 40px;
+        }
+    }
+
     &__title {
         text-align: center;
         letter-spacing: 1px;

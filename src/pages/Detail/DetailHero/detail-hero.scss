@@ -18,7 +18,7 @@
         height: 100vh;
     }
     @include xxs {
-        height: 70vh;
+        height: 60vh;
     }
 
     &::before {
@@ -51,6 +51,10 @@
         @include xs {
             margin-bottom: 0;
         }
+        @include maxH($xs-max) {
+            margin-bottom: 0;
+            padding: 0 40px;
+        }
 
         &__info {
             width: 60%;
@@ -75,6 +79,9 @@
                 }
                 @include mobile {
                     font-size: 30px;
+                }
+                @include maxH($xs-max) {
+                    font-size: 26px;
                 }
             }
 
@@ -208,6 +215,10 @@
             display: none;
         }
         @include mobile {
+            display: none;
+        }
+
+        @include maxH($xs-max) {
             display: none;
         }
 
