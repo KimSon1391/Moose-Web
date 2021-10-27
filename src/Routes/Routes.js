@@ -1,17 +1,27 @@
-import CatagoryPage from 'pages/CatagoryPage';
-import DetailPage from 'pages/Detail/DetailPage';
-import HomePage from 'pages/HomePage';
-import React from 'react';
+import Loading from 'components/Loading/Loading';
+import React, { Suspense } from 'react';
 import { Route, Switch } from 'react-router';
+
+const Category = React.lazy(() => import('../pages/CatagoryPage'));
+const Detail = React.lazy(() => import('../pages/Detail/DetailPage'));
+const Home = React.lazy(() => import('../pages/HomePage'));
 
 function Routes(props) {
   return (
-    <Switch>
-      <Route path="/:category/search/:search" component={CatagoryPage} />
-      <Route path="/:category/:movieId" component={DetailPage} />
-      <Route path="/:category" component={CatagoryPage} />
-      <Route exact path="/" component={HomePage} />
-    </Switch>
+    <Suspense
+      fallback={
+        <div className="centered">
+          <Loading />
+        </div>
+      }
+    >
+      <Switch>
+        <Route path="/:category/search/:search" component={Category} />
+        <Route path="/:category/:movieId" component={Detail} />
+        <Route path="/:category" component={Category} />
+        <Route exact path="/" component={Home} />
+      </Switch>
+    </Suspense>
   );
 }
 

@@ -1,0 +1,27 @@
+@import "../../index.scss";
+
+.spinner {
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    @include size(80px);
+}
+.spinner:after {
+    content: " ";
+    display: block;
+    @include size(64px);
+    margin: 8px;
+    @include br(50%);
+    border: 6px solid $primary-cl;
+    border-color: $primary-cl transparent $primary-cl transparent;
+    @include animation(spinner 1.2s linear infinite);
+}
+
+@include keyframes(spinner) {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
