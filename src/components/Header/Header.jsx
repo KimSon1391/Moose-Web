@@ -38,7 +38,7 @@ function Header(props) {
       <div className="header__wrap container">
         <div className="logo">
           <img src={logo} alt="logo" />
-          <Link to="/">MOOSE</Link>
+          <Link to="/">Moose Movie</Link>
         </div>
         <ul className="header__nav">
           {headerMenu.map((header, index) => (
