@@ -29,7 +29,7 @@
         align-items: center;
         // justify-content: unset;
         a {
-            @include textNeon;
+            @include animationNeon;
         }
         img {
             width: 50px;

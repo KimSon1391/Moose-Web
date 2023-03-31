@@ -217,7 +217,7 @@
     background-size: $size;
 }
 
-@mixin textNeon {
+@mixin animationNeon {
     text-shadow: $text-neon;
     @include animation(flicker 1.5s infinite alternate);
 }
@@ -230,7 +230,7 @@
     53%,
     57%,
     100% {
-        @include textNeon();
+        @include animationNeon();
     }
 
     20%,

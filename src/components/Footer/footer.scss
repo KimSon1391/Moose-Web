@@ -10,7 +10,7 @@
             display: flex;
             align-items: center;
             margin-bottom: 60px;
-            @include textNeon;
+            @include animationNeon;
             color: $white-cl;
             font-size: 40px;
             font-weight: bold;

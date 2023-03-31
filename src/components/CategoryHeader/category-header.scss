@@ -4,7 +4,7 @@
     $paddingCategory: $height-header + 70px;
     padding: $paddingCategory 0 30px;
     margin-bottom: 40px;
-    @include textNeon;
+    text-shadow: $text-neon;
     text-align: center;
     @include xxs {
         margin-bottom: 20px;
