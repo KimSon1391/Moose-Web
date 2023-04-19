@@ -10,7 +10,6 @@ Button.propTypes = {
 function Button({ onClick, className, children }) {
   const handleClick = () => {
     if (!onClick) return;
-
     onClick();
   };
 

@@ -23,6 +23,7 @@
 
     span {
         @include mid();
+        width: 100%;
         z-index: 1;
     }
 

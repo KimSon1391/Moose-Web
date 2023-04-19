@@ -17,7 +17,7 @@ function MovieSlide({ title, type, category }) {
       <div className="section__header">
         <h2 className="title">{title}</h2>
         <Link to={category}>
-          <Button className="outline">More</Button>
+          <Button className="outline">More movie</Button>
         </Link>
       </div>
       <MovieList type={type} category={category} />
