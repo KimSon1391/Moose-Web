@@ -7,7 +7,7 @@ function Footer(props) {
     <div className="footer">
       <div className="footer__content container">
         <Link className="logo" to="/">
-          Moose
+          Moose Movie
         </Link>
         <div className="footer__content__wrap">
           <div className="footer__content__list">

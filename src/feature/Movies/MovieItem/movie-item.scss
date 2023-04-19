@@ -4,7 +4,7 @@
     &__title {
         color: $white-cl;
         margin-top: 1rem;
-        font-size: 18px;
+        // font-size: 18px;
         text-align: center;
         @include transform(translateY(0));
         text-shadow: none;
@@ -82,7 +82,7 @@
         }
 
         &:hover > &__title {
-            @include transform(translateY(-270px));
+            @include transform(translateY(-120px));
             text-shadow: $text-neon;
             @include transition(transform $t ease-out);
         }

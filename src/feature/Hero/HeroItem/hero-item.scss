@@ -4,7 +4,7 @@
     display: flex;
     align-items: flex-end;
     justify-content: center;
-    @include size(100vw, 100vh);
+    @include size(100vw, 85vh);
     @include bgImage;
     padding: 6rem 0;
     position: relative;
